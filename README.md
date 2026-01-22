@@ -24,69 +24,30 @@ A complete web-based food ordering application demonstrating Role-Based Access C
 
 ## USER ROLES & ACCESS MATRIX
 
-|
- Function                      
-|
- Admin 
-|
- Manager           
-|
- Member            
-|
-|
--------------------------------
-|
--------
-|
--------------------
-|
--------------------
-|
-|
- View restaurants & menu items 
-|
- Yes   
-|
- Yes (own country) 
-|
- Yes (own country) 
-|
-|
- Create order (add items)      
-|
- Yes   
-|
- Yes               
-|
- Yes               
-|
-|
- Place order (checkout & pay)  
-|
- Yes   
-|
- Yes               
-|
- No                
-|
-|
- Cancel order                  
-|
- Yes   
-|
- Yes               
-|
- No                
-|
-|
- Update payment method         
-|
- Yes   
-|
- No                
-|
- No                
-|
+**View restaurants & menu items**
+- Admin: Yes
+- Manager: Yes (own country only)
+- Member: Yes (own country only)
+
+**Create order (add items)**
+- Admin: Yes
+- Manager: Yes
+- Member: Yes
+
+**Place order (checkout & pay)**
+- Admin: Yes
+- Manager: Yes
+- Member: No
+
+**Cancel order**
+- Admin: Yes
+- Manager: Yes
+- Member: No
+
+**Update payment method**
+- Admin: Yes
+- Manager: No
+- Member: No
 
 ---
 
