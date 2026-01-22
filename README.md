@@ -101,8 +101,6 @@ Food-Delivery-System/
 
 └── screenshots/ (application screenshots)
 
-text
-
 ---
 
 ## HOW TO RUN THE PROJECT LOCALLY
@@ -118,17 +116,14 @@ text
 
 ### STEP 1: CLONE THE REPOSITORY
 
-```bash
 git clone https://github.com/GarvitUpreti/Food-Delivery-System.git
 cd Food-Delivery-System
 STEP 2: BACKEND SETUP
 1. Navigate to backend folder:
 
-bash
 cd food-ordering-backend
 2. Install dependencies:
 
-bash
 npm install
 3. Create a .env file in backend root with the following keys:
 
