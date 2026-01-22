@@ -61,21 +61,44 @@ A complete web-based food ordering application demonstrating Role-Based Access C
 
 ## PROJECT STRUCTURE
 Food-Delivery-System/
+
 │
+
 ├── README.md (this file)
+
 │
+
 ├── food-ordering-backend/
-│ ├── README.md
-│ ├── src/
-│ ├── prisma/
-│ └── package.json
+
+│ 
+├── README.md
+
+│ 
+├── src/
+
+│ 
+├── prisma/
+
+│ 
+└── package.json
+
 │
+
 ├── food-ordering-frontend/
-│ ├── README.md
-│ ├── src/
-│ └── package.json
+
+│ 
+├── README.md
+
+│ 
+├── src/
+
+│ 
+└── package.json
+
 │
+
 ├── api-collection.json (Postman / Thunder Client collection)
+
 └── screenshots/ (application screenshots)
 
 text
