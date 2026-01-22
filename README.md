@@ -4,7 +4,7 @@ FOOD ORDERING PLATFORM – FULL STACK RBAC APPLICATION
 A complete web-based food ordering application demonstrating
 Role-Based Access Control (RBAC) and Location-Based Access Filtering.
 
-Assignment for: Slooze / Outlier
+Assignment for: Slooze
 Tech Stack: NestJS (Backend) + Next.js (Frontend) + PostgreSQL + Prisma
 
 ================================================================================
