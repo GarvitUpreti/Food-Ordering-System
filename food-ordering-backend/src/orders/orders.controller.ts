@@ -8,6 +8,7 @@ import { RolesGuard } from '../auth/guards/roles.guard';
 import { Roles } from '../auth/decorators/roles.decorator';
 import { GetUser } from '../auth/decorators/get-user.decorator';
 import { Role } from '../common/enums/role.enum';
+import { UpdateOrderStatusDto } from './dto/update-order-status.dto';
 
 @Controller('orders')
 @UseGuards(JwtAuthGuard, RolesGuard)
@@ -89,4 +90,15 @@ export class OrdersController {
   findOne(@Param('id') id: string, @GetUser() user: any) {
     return this.ordersService.findOne(id, user.id, user.role, user.country);
   }
+
+  @Patch(':id/status')
+  @Roles(Role.ADMIN, Role.MANAGER)
+  updateStatus(
+    @Param('id') id: string,
+    @Body() updateStatusDto: UpdateOrderStatusDto,
+    @GetUser() user: any,
+  ) {
+    return this.ordersService.updateOrderStatus(id, updateStatusDto.status, user);
+  }
+
 }

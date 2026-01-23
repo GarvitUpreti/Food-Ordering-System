@@ -9,7 +9,7 @@ import { Country } from '../common/enums/country.enum';
 
 @Injectable()
 export class OrdersService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
 
   // 2.2 Create order - ALL ROLES CAN DO THIS
   async create(createOrderDto: CreateOrderDto, userId: string, userCountry: Country) {
@@ -110,6 +110,47 @@ export class OrdersService {
     await this.updateOrderTotal(orderId);
 
     return orderItem;
+  }
+
+  // Update order status
+  async updateOrderStatus(orderId: string, status: OrderStatus, user: any) {
+    // Find the order
+    const order = await this.prisma.order.findUnique({
+      where: { id: orderId },
+    });
+
+    if (!order) {
+      throw new NotFoundException('Order not found');
+    }
+
+    // Location-based access check (except for Admin)
+    if (user.role !== Role.ADMIN && order.country !== user.country) {
+      throw new ForbiddenException('You can only manage orders from your country');
+    }
+
+    // Can't update cancelled or delivered orders
+    if (order.status === OrderStatus.CANCELLED || order.status === OrderStatus.DELIVERED) {
+      throw new BadRequestException('Cannot update cancelled or delivered orders');
+    }
+
+    // Can't change from CART
+    if (order.status === OrderStatus.CART) {
+      throw new BadRequestException('Cannot update cart orders. Please checkout first.');
+    }
+
+    // Update status
+    return this.prisma.order.update({
+      where: { id: orderId },
+      data: { status },
+      include: {
+        orderItems: {
+          include: {
+            menuItem: true,
+          },
+        },
+        restaurant: true,
+      },
+    });
   }
 
   // Update item quantity
