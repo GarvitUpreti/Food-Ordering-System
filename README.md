@@ -7,6 +7,12 @@ A complete web-based food ordering application demonstrating Role-Based Access C
 Assignment for: Slooze  
 Tech Stack: NestJS (Backend), Next.js (Frontend), PostgreSQL, Prisma
 
+## 🚀 Live Demo
+
+> **Note:** Please use a **desktop/laptop** for the best experience.
+
+👉 **Live Application:**  
+https://foodorderingsystem-jet.vercel.app/dashboard/admin
 ---
 
 ## ASSIGNMENT REQUIREMENTS COMPLETED
