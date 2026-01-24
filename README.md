@@ -12,7 +12,7 @@ Tech Stack: NestJS (Backend), Next.js (Frontend), PostgreSQL, Prisma
 > **Note:** Please use a **desktop/laptop** for the best experience.
 
 👉 **Live Application:**  
-https://foodorderingsystem-jet.vercel.app/dashboard/admin
+https://foodorderingsystem-jet.vercel.app/
 ---
 
 ## ASSIGNMENT REQUIREMENTS COMPLETED
