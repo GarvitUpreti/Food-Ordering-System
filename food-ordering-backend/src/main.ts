@@ -6,8 +6,12 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   
+  const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+
   // Enable CORS
-  app.enableCors();
+  app.enableCors(
+    {origin: frontendUrl,}
+  );
   
   // Enable validation
   app.useGlobalPipes(
@@ -24,6 +28,6 @@ async function bootstrap() {
   const port = process.env.PORT || 3001;
   await app.listen(port);
   
-  console.log(`🚀 Application is running on: http://localhost:${port}/api`);
+  console.log(`🚀 Application is running on port ${port}`);
 }
 bootstrap();
